@@ -56,6 +56,15 @@ int main(void) {
       fclose(fp2);
       return 0;
 }
+{
+     int successful=0;
+     successful = rename("student.txt", "studentdetails.txt");
+     if (successful !=0)
+     printf("\nThe file is not renamed");
+
+     remove("File3.txt");
+
+}
 
   return 0;
 }
