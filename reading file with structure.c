@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 void main()
 {
     int i;
@@ -27,13 +26,14 @@ FILE *fptr;
 
     fptr = fopen("input.txt", "r");
     if (!fptr) {
-        fprintf(stderr, "Could not read file\n");
+        printf(stderr, "Could not read file\n");
         return 1;
     }
 
  printf("details of employee is \n");
  for(i =0;i<3;i++)
  {
+     printf("employee details %d\n\n",(i+1));
      fscanf(fptr,"%s %s %s", &a.emp[i].company,&a.emp[i].name,&a.emp[i].id);
      printf("%s\n",a.emp[i].company);
      printf("%s\n",a.emp[i].name);
@@ -52,25 +52,30 @@ FILE *fptr;
 
  for(i=0;i<3;i++)
  {
+     printf("department number  %d\n\n",i+1);
  fscanf(fatr, "%s %s", &a.dep[i].tech,&a.dep[i].salary);
  printf("%s\n",a.dep[i].tech);
  printf("%s\n",a.dep[i].salary);
  printf("\n");
- }
 
+ }
+ fclose(fptr);
+ fclose(fatr);
+/*
  for(i =0;i<3;i++)
  {
      while(fread(&a,sizeof(struct admin),1,fptr))
        // printf("details %d\n",i+1);
-        fprintf("company = %s\n name =%s\n id =%s\n",a.emp[i].company,a.emp[i].name,a.emp[i].id);
+        printf("company = %s\n name =%s\n id =%s\n",a.emp[i].company,a.emp[i].name,a.emp[i].id);
      fclose(fptr);
  }
  for(i =0;i<3;i++)
  {
+
      while(fread(&a,sizeof(struct admin),1,fatr))
 
-        fprintf("tech = %s\n salary =%s\n",a.dep[i].tech,a.dep[i].salary);
+        printf("tech = %s\n salary =%s\n",a.dep[i].tech,a.dep[i].salary);
         printf("\n");
      fclose(fatr);
- }
+ } */
 }
